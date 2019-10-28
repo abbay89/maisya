@@ -1,0 +1,254 @@
+		<?php
+			$this->load->view('template/header_cnt');
+		?>
+		   
+          <div class="content onload">
+            <div class="row">   
+				<div class="col-md-12 kilatte">
+					<div class="container">
+						<div class="row navbar-container">  
+							<div class="navbar-right">
+								<nav role="navigation" class="navbar">
+									<div class="collapse navbar-collapse">
+									  <ul id="user-menu" class="nav navbar-nav user-menu navbar-right">
+										<li class="login" style="margin-right:10px;"><a href="<?php echo base_url()?>pembelian/checkout"><span class="icon icon-bag" aria-hidden="true"></span> Cart</a></li>
+										<li class="login"><a href="<?php echo base_url()?>profile/logout"><span class="icon icon-power" aria-hidden="true"></span> Logout</a></li>
+									  </ul>
+									</div>
+								</nav>
+							</div>						  
+						</div>
+						<div class="row">
+							<div class="row">
+								<div class="col-xs-12">
+								  <div class="menu-main-header"><span>Beranda > Ringkasan Info </span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						
+						<div class="col-md-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="section-item-sub">
+									  <div class="card card-dark">
+										<div class="card-content">
+										 
+										  <div class="">
+											<div class="section-profile-title">Billing Address</div>
+											<div class="section-profile-name">
+												<?php echo $datacustomer->Nama ?>
+											</div>
+											<div class="section-profile-address">
+											  <span><?php echo $datacustomer->Mitra_id ?> </span>
+											  <span><?php echo $datacustomer->Kode ?></span>
+											  <span>Alamat : <br /></span>
+											</div>
+										  </div>
+										  <div class="space-20"></div>
+										  <div class="text-right"><a class="btn btn-secondary btn-small" href="<?php echo base_url()."profile" ?>" title="Edit Profile"><i class="icon icon-pencil"></i> Edit Profile</a></div>
+										</div>
+										
+									  </div>
+									</div>
+								  </div>
+							</div>
+						</div>
+						<div class="col-md-8">							
+								
+								
+								<div class="row">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="section-item-sub card-balance">
+											  <div class="box-head card-red">
+												<a title="Pay All" href="clientarea?action=masspay&amp;all=true">
+												<div class="card-content margin-bottom-small">
+												  <div class="card-balance-content">
+													<div class="card-balance-title"><h5>Total Saldo</h5></div>
+													<div class="card-balance-count">
+														Rp. 1.500.000
+													</div>
+												  </div>
+												</div>
+												</a> 
+											  </div>
+											</div>	
+										</div>		
+										<div class="col-md-6">
+											<div class="section-item-sub card-balance">
+											  <div class="box-head card-red">
+												<a title="Pay All" href="clientarea?action=masspay&amp;all=true">
+												<div class="card-content margin-bottom-small">
+												  <div class="card-balance-content">
+													<div class="card-balance-title"><h5>Total Point</h5></div>
+													<div class="card-balance-count">
+														7
+													</div>
+												  </div>
+												</div>
+												</a> 
+											  </div>
+											</div>
+											
+										</div>								
+							
+										<div class="col-md-6">
+											<div class="section-item-sub card-balance">
+											  <div class="box-head card-red">
+												<a title="Pay All" href="#">
+												<div class="card-content margin-bottom-small">
+												  <div class="card-balance-content">
+													<div class="card-balance-title"><h5>Sponsor</h5></div>
+													<div class="card-balance-count">
+														Rp. 30.000
+													</div>
+												  </div>
+												</div>
+												</a> 
+											  </div>
+											</div>
+											
+										</div>
+										<div class="col-md-6">
+											<div class="section-item-sub card-balance">
+											  <div class="box-head card-red">
+												<a title="Pay All" href="#">
+												<div class="card-content margin-bottom-small">
+												  <div class="card-balance-content">
+													<div class="card-balance-title"><h5>Repeat Order</h5></div>
+													<div class="card-balance-count">
+														Rp. 500.000
+													</div>
+												  </div>
+												</div>
+												</a> 
+											  </div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							
+						</div>
+						<?php
+							if(!$this->session->userdata("status")){
+						?>
+							<div class="col-md-12">
+								<div class="row">
+									<?php
+										//echo "<pre>";
+										//print_r($listprodu);
+										//echo "</pre>";
+										foreach($listproduct as $lst_prod){
+											//$idnya = $lst_prod->$id;
+											//echo $idnya;
+											$price = file_get_contents("http://maisya.id:6070/api/GetPrice?kodeitem=".$lst_prod->KodeItem);
+									?>
+										<div class="col-md-3">
+											<div class="col-md-12 column productbox">
+												<a href="<?php echo base_url()?>pembelian/detail/<?php echo $lst_prod->OID ?>">
+													<img src="http://maisya.id:6070/api/itemCode_image?kodeitem=<?php echo $lst_prod->KodeItem ?>&width=400&height=400" class="img-responsive">
+												</a>
+												<div class="producttitle"><?php echo $lst_prod->Deskripsi ?></div>
+												<div class="productprice col-md-12">
+													<div class="pricetext">
+														Rp. <?php echo  number_format($price)?>
+													</div>
+													<div class="col-md-12">
+														<a href="<?php echo base_url()?>pembelian/addcart/<?php echo $lst_prod->OID ?>" class="btn btn-danger btn-sm" role="button">
+														<i class="fa fa-shopping-cart"></i>
+															Add To Cart
+														</a>
+													</div>
+												
+												
+												</div>
+											</div>
+										</div>
+									<?php
+										}
+									?>
+								</div>
+							</div>
+						<?php
+							}else{
+						?>
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-striped">
+											<thead>
+											  <tr>
+												<th>Image</th>
+												<th>Item Code</th>
+												<th>Name</th>
+												<th>Quantity</th>
+												<th>Price</th>
+												<th>Discount</th>
+												<th>Net</th>
+											  </tr>
+											</thead>
+											<tbody>
+											<?php
+												foreach($listproductpaket as $lst_prod){
+													
+													$detail	= json_decode(file_get_contents('http://maisya.id:6070/api/ItemCodes?oid='.$lst_prod->ItemCode_oid));
+													//print_r($detail); 
+											?>
+												  <tr>
+													<td>
+														<img src="http://maisya.id:6070/api/itemCode_image?kodeitem=<?php echo $detail->KodeItem ?>&width=100&height=100" class="img-responsive" alt="no image">
+													</td>
+													<td><?php echo $detail->KodeItem?></td>
+													<td><?php echo $detail->Deskripsi?></td>
+													<td><?php echo number_format($lst_prod->Quantity) ?></td>
+													<td><?php echo number_format($lst_prod->Price) ?></td>
+													<td><?php echo number_format($lst_prod->DiscountAmount) ?></td>
+													<td><?php echo number_format($lst_prod->Net) ?></td>
+												  </tr>
+											<?php
+													$total = $total + $lst_prod->Net;
+												}
+											?>
+											</tbody>
+											<tr>
+												<th><h2>Total</h2></th>
+												<th colspan="6"  style='text-align: right'>
+													<h2 ><?php echo number_format($total) ?></h2>
+												</th>
+											</tr>
+											<tr>
+												<th colspan="7">
+													<a href="<?php echo base_url()?>pembelian/proc_paket" class="btn btn-danger btn-sm col-xs-12" role="button">
+													<i class="fa fa-shopping-cart"></i>
+														Buy Now
+													</a>
+												</th>
+											</tr>
+										</table>
+									</div>
+								
+								</div>
+							</div>
+						<?php
+							}
+						?>
+					</div>
+					
+					
+					
+						  
+
+				</div><!--/.content-->
+			</div>
+		</div>
+	</div>
+	
+		<?php
+			$this->load->view('template/footer_cnt');
+		?>
+
+

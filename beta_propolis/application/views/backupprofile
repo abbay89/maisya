@@ -1,0 +1,228 @@
+		<?php
+			$this->load->view('template/header_cnt');
+		?>
+		   
+          <div class="content onload">
+            <div class="row">   
+				<div class="col-md-12 kilatte">
+					<div class="container">
+						<div class="row navbar-container">  
+							<div class="navbar-right">
+								<nav role="navigation" class="navbar">
+									<div class="collapse navbar-collapse">
+									  <ul id="user-menu" class="nav navbar-nav user-menu navbar-right">
+										<li class="login"><a href="<?php echo base_url()?>profile/logout"><span class="icon icon-login" aria-hidden="true"></span> Logout</a></li>
+									  </ul>
+									</div>
+								</nav>
+							</div>						  
+						</div>
+					</div>
+					<div class="menu-main">
+					  <div class="row">
+						<div class="col-xs-12">
+						  <div class="menu-main-header"><span> User Management </span></div>
+						</div>
+					  </div>
+					</div>
+					<div class="space-30"></div>
+					<div class="col-xs-12 no-padding" role="tablist">
+						<ul id="tabs" class="nav nav-tabs">
+						  <li role="presentation" class="active">
+							<a data-toggle="tab" href="#profile">Profile
+							</a>
+						  </li>
+						  <li role="presentation">
+							<a data-toggle="tab" href="#reguser">Register User 
+							</a>
+						  </li>
+						  <li role="presentation">
+							<a data-toggle="tab" href="#listuser">List User 
+							</a>
+						  </li>
+						</ul>
+						<div class="tab-content">
+							
+							<div id="profile" class="tab-pane active" role="tabpanel">
+								<div class="container">
+								<div class="product-details clearfix">
+									<div class="row detail_profile">
+										<div class="form-group">
+											<label for="firstname" class="control-label">Full Name</label>
+											<input type="text" value="<?php echo $userProfile->user_name?>" id="firstname" name="firstname" class="form-control" readonly>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="control-label">Email</label>
+											<input type="text" value="<?php echo $userProfile->user_email?>" id="firstname" name="firstname" class="form-control" readonly>
+										</div>
+										<div class="Address">
+											<label for="firstname" class="control-label">Address</label><br />
+											<textarea class="prof" readonly rows="5" cols="80"><?php echo $userProfile->user_address?></textarea>
+										</div>
+										<div class="Address">
+											<label for="firstname" class="control-label">Type</label>
+											<input type="text" value="<?php echo $userProfile->user_type?>" id="firstname" name="firstname" class="form-control" readonly>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+							<div id="reguser" class="tab-pane" role="tabpanel">
+								<div class="container">
+								<div class="product-details clearfix">
+									<div class="row">
+										<form method="post" action="<?php base_url()?>profile/save_profile">
+											<div class="form-group">
+												<label for="firstname" class="control-label">Full Name</label>
+												<input type="text" id="firstname" name="user_name" class="form-control" >
+												<input type="hidden" id="firstname" name="user_createby" class="form-control" value="<?php echo $referenceid?>">
+											</div>
+											<div class="form-group">
+												<label for="firstname" class="control-label">Email</label>
+												<input type="text"  id="firstname" name="user_email" class="form-control" >
+											</div>
+											<div class="form-group">
+												<label for="firstname" class="control-label">Password</label>
+												<input type="text"  id="firstname" name="user_password" class="form-control" >
+											</div>
+											<div class="Address">
+												<label for="firstname" class="control-label">Address</label><br />
+												<textarea name="user_address" rows="5" cols="80"></textarea>
+											</div>
+											<div class="Address">
+												<div class="space-20"></div>
+												<input type="submit" value="Process" class="btn btn-danger" />
+											</div>
+										</form>
+									</div>
+								</div>
+								</div>
+							</div>
+							<div id="listuser" class="tab-pane" role="tabpanel">
+								<div class="container">
+									<table class="table table-striped">
+										<thead>
+										  <tr>                
+											<th>Full Name</th>
+											<th>Email</th>
+											<th>Address</th>
+											<th>Password</th>
+											<th>Action </th>
+											<th class="cell-view"></th>
+										  </tr>
+										</thead>
+										<tbody>             
+											<?php foreach($allUser as $lstUser){ ?>
+												<tr>                
+													
+													<td>
+														<?php
+															echo $lstUser->user_name;
+														?>
+													</td>
+													<td>
+														<?php
+															echo $lstUser->user_email;
+														?>
+													</td>
+													<td>
+														<?php
+															echo $lstUser->user_address;
+														?>
+													</td>
+													<td>
+														<?php
+															echo $lstUser->user_password;
+														?>
+													</td>
+													<td>
+														<a href="#" class="btn btn-danger">Reset</a>
+														<a href="#" class="rule btn btn-warning">Rule</a>
+													</td>
+												</tr>
+											<?php } ?>
+										</tbody>          
+									</table>
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+							
+				</div><!--/.content-->
+			</div>
+		</div>
+	</div>
+		<div id="dialog" title="Setting Privilege Menu :: Irfandi Prasetya">		  
+			<form method="post" action="#">
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="service" />
+					<label for="scales">Profile</label>
+					<div class="container">
+						<div class="offset-xs-2 col-xs-10">
+							<input type="checkbox" name="feature" value="vwbandwidth" />
+							<label for="scales">View Profile</label>&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="feature" value="setbandwidth" />
+							<label for="scales">Add user</label>&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="feature" value="setbandwidth" />
+							<label for="scales">View user</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="service" />
+					<label for="scales">Service</label>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="bandwidth" />
+					<label for="scales">Bandwidth</label>
+					<div class="container">
+						<div class="offset-xs-2 col-xs-10">
+							<input type="checkbox" name="feature" value="vwbandwidth" />
+							<label for="scales">View Bandwidth</label>&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="feature" value="setbandwidth" />
+							<label for="scales">Setting Bandwidth</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="bandwidth" readonly />
+					<label for="scales">Support</label>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="billing" />
+					<label for="scales">Billing</label>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" name="feature" value="bandwidth" readonly />
+					<label for="scales">PGAS Product</label>
+				</div>
+			</div>
+		</div>
+		<script>
+		  $( function() {
+			$( "#dialog" ).dialog({
+			  autoOpen: false,
+			  show: {
+				effect: "blind",
+				duration: 500
+			  },
+			  hide: {
+				effect: "blind",
+				duration: 500
+			  },
+			  width: "50%",
+			  maxWidth: "768px"
+			});
+		 
+			$( ".rule" ).on( "click", function() {
+			  $( "#dialog" ).dialog( "open" );
+			});
+		  } );
+		</script>
+		<?php
+			$this->load->view('template/footer_cnt');
+		?>
+
+

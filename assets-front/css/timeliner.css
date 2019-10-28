@@ -1,0 +1,116 @@
+#timeline {
+		width: 100%;
+		height: 500px;
+		overflow: hidden;
+		margin: 40px auto;
+		position: relative;
+	}
+	
+		#dates {
+			width: 200px;
+			background: url(../img/milestones/tracklist.png) repeat-y left top;
+			overflow: hidden;
+			float: left;
+		}
+		
+			#dates li {
+				list-style: none;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				font-size: 20px;
+				padding-left: 10px;
+				background: url('../img/milestones/dotlist.png') left center no-repeat;
+			}
+			
+				#dates a {
+					color: #000000;
+					line-height: 24px;
+					padding-bottom: 10px;
+					position: relative;
+					left: 20px;
+				}
+				
+				#dates .selected {
+					position: relative;
+					background: #e53a1d;
+			        font-size: inherit;
+					color: #fff;
+					padding: 7px;
+					border-radius: 5px;
+				}
+				
+				#dates .selected:before {
+					display: block;
+					position: absolute;
+					bottom: -7px;
+					left: 24px;
+					content:"";
+					z-index: 1;
+					width: 19px;
+					height: 9px;
+					background: url(../img/milestones/tri.png) no-repeat center top;
+				}
+		
+		#issues {
+			width: 80%;
+			height: 400px;
+			overflow: hidden;
+			float: left;
+		}
+		
+		#issues h2 {
+			color: #e53a1d;
+			font-size: 75px;
+			line-height: 75px;
+			letter-spacing: -2px;
+		}
+		
+			#issues li {
+				position: relative;
+				top: 133px;
+				width: 100%;
+				height: 500px;
+				list-style: none;
+			}
+			
+				#issues li img {
+					float: left;
+					margin: 0 30px 0 5px;
+				}
+				
+				#issues li p {
+					font-size: 14px;
+					margin: 10px 20px;
+					font-weight: normal;
+					line-height: 22px;
+				}
+		
+		#next,
+		#prev {
+			position: absolute;
+			left: 55%;
+			font-size: 70px;
+			width: 38px;
+			height: 22px;
+			background-position: 0 -44px;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
+			overflow: hidden;
+		}
+			#next:hover,
+			#prev:hover {
+				background-position:  0 0;
+			}
+			#next {
+				bottom: 0;
+				background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png');
+			}
+			#prev {
+				top: 0;
+				background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png');
+			}
+				#next.disabled,
+				#prev.disabled {
+					opacity: 0.2;
+				}

@@ -1,0 +1,52 @@
+.login {
+    /* The image used */
+    background-image:url("../../assets_front/images/pgas.jpg");
+
+    /* Full height */
+    height: 100%;
+	overflow:hidden;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	margin:0;
+	padding:0;
+}
+.top-login{
+	background:#F47F1F;
+}
+.header_login{
+	color:#000;
+	padding: 50% 0 0;
+	text-align:center;
+	line-height:50px;
+	font-weight:bold;
+	font-size:20px;
+}
+.formlogin{
+	padding:20px 10px 20px 10px;
+	background:#fff;
+}
+.form-group input[type="text"], input[type="password"], input[type="email"] {
+    border-bottom: 1px solid #ccc;
+    border-color: #fff #fff #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 12px;
+}
+.btn-login{
+	background :#F9A21A;
+	color:#fff;
+}
+.btn-login:hover{
+	background :#fff;
+	color:#F9A21A;
+	border:1px solid #F9A21A;
+}
+.forgotpass{
+	padding-top:10px;
+	padding-bottom:20px;
+	background-color:#fff;
+	text-align:center;
+}
+

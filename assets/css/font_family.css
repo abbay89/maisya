@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Garamond;
+    src: url('../fonts/Adobe Garamond Regular.otf');
+	font-style: normal;
+}
+@font-face {
+    font-family: RalewayRegular;
+    src: url('../fonts/Raleway-Regular.ttf');
+}

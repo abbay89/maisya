@@ -1,0 +1,60 @@
+
+.appriseOverlay{
+	position:fixed;
+	top:0;
+	left:0;	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background: rgba(0,0,0,0.7);
+	display:none;
+	z-index: 99999999;
+}
+
+.appriseOuter{
+	background:white;
+	border: 5px solid #f7ca5a;
+	z-index:99999999;
+	width:50%;
+	position:fixed;
+	display:none;
+}
+
+.appriseInner{
+	padding:20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.appriseInner button {
+	background: none;
+	border: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 1.6%;
+    background: #d42227;
+    width: 23%;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    font-size: 16px !important;
+    border-radius: 2px;
+    font-family: "gothammedium", sans-serif;
+    font-weight: normal;
+}
+
+.appriseInner button:hover{
+	color:#fff;
+	cursor: pointer;
+}
+
+.aButtons,.aInput{
+	text-align:center;
+	margin:20px 10px 0;
+}
+
+.aTextbox{
+	width:180px;
+	font-size: 20px !important;
+	margin: 0 0 15px 0;
+	padding:5px 10px;
+}
