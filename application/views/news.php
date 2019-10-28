@@ -81,7 +81,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 </script>
 	-->
-	<!-- Hotjar Tracking Code for https://www.maisya.id/ -->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -92,7 +91,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-	
   </head>
 	<body>
 
@@ -167,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="col-md-4" >
 						<div class="post">
 						<a class="post-img" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
-						<div style="margin-top:20px;height:200px;width:100%;background:url(../assets/uploads/img_menu/<?php echo $row->image; ?>) no-repeat;background-position:center;background-size:auto 100%"></div>
+						<div style="margin-top:20px;height:200px;width:100%;background:url(../assets/uploads/img_menu/<?php echo $row->image; ?>) no-repeat;background-position:center;background-size:100% auto"></div>
 						</a>
 							<div class="post-body">
 								<div class="post-meta">
@@ -177,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 								
 								
-								<h3 class="post-title"><a href="<?php echo base_url();?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
+								<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 								<p style="font-size:18px;"> <?php echo substr($row->intro,0,100); ?>...</p>
 									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 							</div>
@@ -209,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 								
 								
-								<h3 class="post-title"><a href="<?php echo base_url();?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
+								<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 								<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
 									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 									<div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>

@@ -128,8 +128,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 								<script async src="https://static.addtoany.com/menu/page.js"></script>
 								<!-- AddToAny END -->
-				            
-								<br><br>
+				            	
+				            	<br><br>
                                 <div  style="width:100%" align="center"><img width="100%" src="../../../assets/uploads/img_menu/<?php echo $row->image; ?>" /></div><br><br>
 								<?php 
 								$cont = str_replace("height=","",$row->content);
@@ -158,7 +158,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		$('ol').css('color','#000')
 		$('li').css('font-family','\'Nunito Sans\', sans-serif')
 		$('li').css('color','#000')
+		$('li').css('white-space','normal')
+		
 		//$('span').css('font-family','\'Nunito Sans\', sans-serif')
 		$('span').css('font-size','18px')
+		
+		$('span').css('font-family','inherit')
+		$('span').css('font-weight', 300);
+		$('span').css('font-style', 'normal');
+		$('span').css('font-variant', 'normal');
+		$('span').css('text-decoration', 'normal');
+		$('span').css('vertical-align', 'baseline');
+		$('span').css('white-space', 'pre-wrap');
 		</script>
 	
