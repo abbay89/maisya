@@ -180,6 +180,7 @@ class Product extends CI_Controller {
 		$data['type'] 			= $subtag;
 		$data['sortby'] 		= 'ProductId';
 
+		$data['cate'] 		= "Promo Discount ".($disc==50 ? 'lebih dari':'')." ".$disc.($disc!='' ? '%':'');
 		$data['title_page']			= 	"Promo Discount ".($disc==50 ? 'lebih dari':'')." ".$disc.($disc!='' ? '%':'');
 		
 		$data['controller']		= $this; 

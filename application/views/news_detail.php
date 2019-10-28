@@ -114,10 +114,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								$date=date_create($row->date_added);
 								echo date_format($date,"d F Y");
 								 ?></h5>
-								<div>
+								<!-- <div>
 								<img class="sosmed" src="../../../assets/uploads/sosmed/fb.png" height="50" />
 								<img class="sosmed" src="../../../assets/uploads/sosmed/wa.png" height="50" />
-								<img class="sosmed" src="../../../assets/uploads/sosmed/ig.png" height="50" /></div><br><br>
+								<img class="sosmed" src="../../../assets/uploads/sosmed/ig.png" height="50" /></div> -->
+								<!-- AddToAny BEGIN -->
+								<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+								<a class="a2a_button_facebook"></a>
+								<a class="a2a_button_twitter"></a>
+								<a class="a2a_button_whatsapp"></a>
+								<a class="a2a_button_copy_link"></a>
+								<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+								</div>
+								<script async src="https://static.addtoany.com/menu/page.js"></script>
+								<!-- AddToAny END -->
+				            
+								<br><br>
                                 <div  style="width:100%" align="center"><img width="100%" src="../../../assets/uploads/img_menu/<?php echo $row->image; ?>" /></div><br><br>
 								<?php 
 								$cont = str_replace("height=","",$row->content);

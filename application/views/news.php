@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 								
 								
-								<h3 class="post-title"><a href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
+								<h3 class="post-title"><a href="<?php echo base_url();?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 								<p style="font-size:18px;"> <?php echo substr($row->intro,0,100); ?>...</p>
 									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 							</div>
@@ -209,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 								
 								
-								<h3 class="post-title"><a href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
+								<h3 class="post-title"><a href="<?php echo base_url();?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 								<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
 									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 									<div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>
