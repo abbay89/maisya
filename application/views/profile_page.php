@@ -15,7 +15,7 @@
 					</div>
 					<div class="col-xs-12 col-md-12 col-sm-12">
 						<div class="col-xs-12 col-md-3 col-sm-3 left-profile">
-							<img src="<?php echo base_url()?>assets/uploads/foto/<?php echo $profile->pic_user?>" class="img-circle img-responsive" alt="e"> 			
+							<img src="<?php echo base_url()?>assets/uploads/foto/<?php echo $profile->picuser?>" class="img-circle img-responsive" alt="e"> 			
 							<div class="caption cp-profile">
 									<address>
 									Name:<br>

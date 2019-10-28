@@ -22,7 +22,7 @@ class Profile_model extends CI_Model {
 
 	public function getDetailcus($id)
 	{
-		$sql	= "select * from customer where cust_username = '".$id."'";
+		$sql	= "select *,IFNULL(pic_user, 'user.jpg') AS picuser from customer where cust_username = '".$id."'";
 		//echo $sql; exit;
 		$query	= $this->db->query($sql);
 		return $query->row();
