@@ -41,6 +41,8 @@ class Checkout extends CI_Controller {
     }
 
     public function index() {
+    	$this->load->library('user_agent');
+  
 		$error = 0;
 		$data['loadjs']				= 	$this->loadJS;
 		$data['loadCss']			= 	$this->loadCSS;
@@ -94,13 +96,23 @@ class Checkout extends CI_Controller {
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 			"token: ".$this->session->userdata('token')
 		));		
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15); 
+		// curl_setopt($ch, CURLOPT_TIMEOUT, 400);
 		$result 	= curl_exec($curl);
+		$retry = 0;
+		while(curl_errno($curl) == 28 && $retry < 3){
+		    $result = curl_exec($curl);
+		    $retry++;
+		}
 		
 		//print_r($dtreturn);
 		
 		if(!$result) {
-			$this->session->sess_destroy();
-			redirect("home");
+			// $this->session->sess_destroy();
+			// redirect("home");
+			if ($this->agent->is_referral()){
+			    redirect($this->agent->referrer());
+			}
 			$this->load->view('need_login',$data);
 			$error = 1;
 		}

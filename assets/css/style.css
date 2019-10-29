@@ -1452,6 +1452,9 @@ font-size: 24px;
 	background-color:#907829;
 	color:#fff;
 }
+.right-profile #exampleInputFile{
+	color: #000000;
+}
 .left-profile .cp-profile{
 	margin-left:10px;
 	
