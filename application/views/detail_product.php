@@ -254,7 +254,7 @@
 								</div>
 							</div>
 						</div>
-						<div style="float:left;width:100%;font-size:12px" align="center">Maisya Jewellery Pusat Penjualan Cincin Berlian | Cincin Emas | Cincin Tunangan | Cincin Kawin | Cincin Nikah | Kalung Berlian | Kalung Emas | Liontin Berlian | Liontin Emas | Diamond Jewellery | Gold Jewellery | Gold Ring | Pearl Gold | Diamond Ring Harga Dijamin Murah.</div>
+						<div style="float:left;width:100%;font-size: 16px;margin-bottom: 18px;margin-top: 18px;" align="center">Maisya Jewellery Pusat Penjualan Cincin Berlian | Cincin Emas | Cincin Tunangan | Cincin Kawin | Cincin Nikah | Kalung Berlian | Kalung Emas | Liontin Berlian | Liontin Emas | Diamond Jewellery | Gold Jewellery | Gold Ring | Pearl Gold | Diamond Ring Harga Dijamin Murah.</div>
 						<?php
 							$src = base_url()."assets/uploads/box/".$img_box.".jpg";
 
