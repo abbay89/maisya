@@ -711,11 +711,24 @@
 				alert("Email is Empty");
 				document.forms["frmReg"]["email"].setAttribute("style", "border-bottom:1px solid red;");
 				return false;
+			}else{
+				 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  				if(!re.test(email)){
+  					alert("Email not valid");
+					document.forms["frmReg"]["email"].setAttribute("style", "border-bottom:1px solid red;");
+					return false;
+  				}
 			}
 			if (phone == "") {
 				alert("Phone is Empty");
 				document.forms["frmReg"]["phone"].setAttribute("style", "border-bottom:1px solid red;");
 				return false;
+			}else{
+				if(isNaN(phone)){
+					alert("Phone is not a number");
+					document.forms["frmReg"]["phone"].setAttribute("style", "border-bottom:1px solid red;");
+					return false;
+				}
 			}
 			if (password == "") {
 				alert("Passeword is Empty");
