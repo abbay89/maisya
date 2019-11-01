@@ -49,6 +49,10 @@ class Blog extends CI_Controller {
 		}
 		
 		$data['news'] = $this->news_model->getData($id);
+		if(isset($_GET['id'])){
+			$data['title_page']			= 	$data['news'][0]->title;
+			$data['ogtitle_page']			= 	$data['news'][0]->title;
+		}
 		
 		
 	   $this->load->view($temp,$data);
