@@ -6,6 +6,7 @@ class Blog extends CI_Controller {
 
     public function Blog() {
         parent::__construct();
+        
 		
 		$this->loadJS = array (		
 			'/assets/js/skdslider.min.js',
