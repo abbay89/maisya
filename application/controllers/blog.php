@@ -6,7 +6,6 @@ class Blog extends CI_Controller {
 
     public function Blog() {
         parent::__construct();
-        
 		
 		$this->loadJS = array (		
 			'/assets/js/skdslider.min.js',
@@ -28,6 +27,7 @@ class Blog extends CI_Controller {
 		);
 		
 		$this->load->model('news_model');
+		$this->load->helper('tglindo_helper');
     }
 	
 	

@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h3 style="text-align: left;font-size:27px !important;font-family: 'Nunito Sans', sans-serif !important;color:#000"><?php echo $row->title; ?></h3>
                                 <h5><?php 
 								$date=date_create($row->date_added);
-								echo date_format($date,"d F Y");
+								echo tgl_indo(date_format($date,"Y-m-d"));
 								 ?></h5>
 								<!-- <div>
 								<img class="sosmed" src="../../../assets/uploads/sosmed/fb.png" height="50" />

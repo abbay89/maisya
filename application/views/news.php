@@ -171,7 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="post-meta">
 									<a class="post-category cat-2" href="#"><?php echo $row->author ?></a>
 									<span class="post-date"> <?php	$date=date_create($row->date_added);
-									echo date_format($date,"d F Y"); ?></span>
+									echo tgl_indo(date_format($date,"Y-m-d")); ?></span>
 								</div>
 								
 								
@@ -202,7 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<a class="post-category cat-2" href="#"><?php echo $row->author ?></a>
 									<span class="post-date"> <?php 
 									$date=date_create($row->date_added);
-									echo date_format($date,"d F Y");
+									echo tgl_indo(date_format($date,"Y-m-d"));
 									?></span>
 								</div>
 								
