@@ -109,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							foreach($news as $row){ 
 					
 								?>
-								<h3 style="font-size:27px !important;font-family: 'Nunito Sans', sans-serif !important;color:#000"><?php echo $row->title; ?></h3>
+								<h3 style="text-align: left;font-size:27px !important;font-family: 'Nunito Sans', sans-serif !important;color:#000"><?php echo $row->title; ?></h3>
                                 <h5><?php 
 								$date=date_create($row->date_added);
 								echo date_format($date,"d F Y");
