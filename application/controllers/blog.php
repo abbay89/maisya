@@ -27,6 +27,7 @@ class Blog extends CI_Controller {
 		);
 		
 		$this->load->model('news_model');
+		$this->load->model("home_model");
 		$this->load->helper('tglindo_helper');
     }
 	
@@ -40,6 +41,10 @@ class Blog extends CI_Controller {
 		$data['ogtitle_page']		= 	"Maisya Jewellery Online Shop";
 		$data['ogtimg_page']		= 	base_url()."assets/img/logo.png";
 		$data['img_page']			= 	base_url()."assets/img/logo.png";
+		$data['banner_top'] 	= $this->home_model->get_banner('top');
+		$data['banner_bottom'] 	= $this->home_model->get_banner('bottom');
+		$footer 				= $this->db->query("select * from company_profile")->result();
+		$data['footer']			= $footer;
 		
 		$id= '';
 		$temp = 'news';

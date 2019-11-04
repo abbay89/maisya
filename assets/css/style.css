@@ -42,6 +42,17 @@ header{
 	position:fixed;
 	z-index:1000;	
 	width:100%;
+	color: #000;
+    font-family: RalewayRegular;
+    font-size: 13px;
+    line-height: 1.42857;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    letter-spacing: 0.5px;
+}
+header a{
+	font-weight: normal;
 }
 li{
 	list-style:none;
