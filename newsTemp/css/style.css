@@ -987,8 +987,11 @@ RESPONSIVE
     letter-spacing: 0.5px;
 }
 .blog-title{
-     padding-top:80px;font-size:30px;font-weight:600;text-align: center; font-family: Garamond;
+     padding-top:80px;font-size:30px;
+     /*font-weight:600;*/
+     text-align: center; font-family: Garamond;
      margin-bottom: 3.5%;
+     color: #000000;
 }
 #newsContent{
      /*margin-top: 5%;*/

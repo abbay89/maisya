@@ -10,7 +10,7 @@
 		<!-- <link type="text/css" rel="stylesheet" href="../newsTemp/css/bootstrap.min.css"/> -->
 		
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="../newsTemp/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>newsTemp/css/font-awesome.min.css">
 	<!-- <div class="row" style="margin:2%">
 						<div class="col-xs-12 col-md-12 col-sm-12">
 							<div class="col-xs-5 col-md-5 col-sm-5">
