@@ -71,7 +71,7 @@
 					
 					if($total==0){
 						$i=0;
-						echo ' <div class="row">';
+						//echo ' <div class="row">';
 					}
 					?>
 					<div class="col-md-4" >
@@ -96,38 +96,39 @@
                     <?php 
 					 
 					if($total==0){
-						echo ' </div><div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>';
+						//echo ' </div><div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>';
 					}
 					}else{
 					?>
 					
-					<div class="row" style="margin-top:5%;margin-left:1%;margin-right:1%">
-					<div style="margin-top:5%;" class="col-md-8">
-					
-						<div class="post">
-						<a class="post-img" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
+					<!-- <div class="row" style="margin-top:5%;margin-left:1%;margin-right:1%"> -->
+						<div style="margin-top:5%;" class="col-md-8">
 						
-						<img src="../assets/uploads/img_menu/<?php echo $row->image; ?>" />
-						</a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="#"><?php echo $row->author ?></a>
-									<span class="post-date"> <?php 
-									$date=date_create($row->date_added);
-									echo tgl_indo(date_format($date,"Y-m-d"));
-									?></span>
+							<div class="post">
+							<a class="post-img" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
+							
+							<img src="../assets/uploads/img_menu/<?php echo $row->image; ?>" />
+							</a>
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-2" href="#"><?php echo $row->author ?></a>
+										<span class="post-date"> <?php 
+										$date=date_create($row->date_added);
+										echo tgl_indo(date_format($date,"Y-m-d"));
+										?></span>
+									</div>
+									
+									
+									<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo urlencode($title); ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
+									<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
+										<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
+										<div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>
 								</div>
-								
-								
-								<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo urlencode($title); ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
-								<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
-									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
-									<div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>
+							
 							</div>
-						
+							
 						</div>
-						
-					</div></div>
+					<!-- </div> -->
 					
 					<?php
 					}

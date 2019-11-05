@@ -510,6 +510,8 @@ RESPONSIVE
 \*----------------------------*/
  .post {
      margin-bottom: 40px;
+     padding-left: 2%;
+     padding-right: 2%;
 }
  .post .post-img {
      display: block;
@@ -1035,5 +1037,9 @@ RESPONSIVE
          list-style: outside none none;
          margin: 0;
          padding-left: 5%;
+     }
+     .col-md-4{
+          padding-left: 0px;
+          padding-right: 0px;
      }
 }
