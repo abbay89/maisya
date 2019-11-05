@@ -35,6 +35,7 @@ class News extends CI_Controller {
             $crud->set_field_upload('image', 'assets/uploads/img_menu/');
             
             $crud->callback_before_insert(array($this, 'create_wh_url'));
+            $crud->callback_after_insert(array($this, 'resizeimg'));
             $this->load($crud);
 			
         } catch (Exception $e) {
@@ -73,6 +74,11 @@ class News extends CI_Controller {
         $string = preg_replace('#[\s]{2,}#', ' ', $string);
         $string = str_replace(array(' '), array('-'), $string);
         return $string;
+    }
+    function resizeimg($postdata, $id)
+    {
+        $this->load->helper('imgresizeblog_helper');
+        imgresizeblog($id);
     }
 	
 	

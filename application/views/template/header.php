@@ -18,6 +18,8 @@
 	<meta name='robots' content='INDEX,FOLLOW' />
     <meta property="og:title" content="<?php echo $ogtitle_page ?>"/>
     <meta property="og:image" content="<?php echo $ogtimg_page ?>"/>
+    <meta property="og:image:width" content="400" />
+	<meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="<?php echo $ogtitle_page ?>"/>
 	<meta property="og:description" content="<?php echo $ogdesc_page ?>">
     <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>

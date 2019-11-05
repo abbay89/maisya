@@ -29,6 +29,7 @@ class Blog extends CI_Controller {
 		$this->load->model('news_model');
 		$this->load->model("home_model");
 		$this->load->helper('tglindo_helper');
+		$this->load->helper('imgresizeblog_helper');
     }
 	
 	
@@ -66,12 +67,17 @@ class Blog extends CI_Controller {
 		if(isset($_GET['id'])){
 			$data['title_page']			= 	$data['news'][0]->title;
 			$data['ogtitle_page']			= 	$data['news'][0]->title;
+			$data['ogtimg_page']		= 	base_url()."assets/uploads/img_menu/".$data['news'][0]->image;
+			$data['ogtimg_page']		= 	imgresizeblog($_GET['id']);
 		}
 		
-		
+		// echo "string";
+		// echo '<img src="http://localhost/maisya/blog/Blogimage/23">';
 	   $this->load->view($temp,$data);
 		
 	}
+
+	
 	
 	
 }
