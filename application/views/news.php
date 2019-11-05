@@ -45,20 +45,20 @@
 					if($j==1){
 						
 					?>
-					<div class="row">
+					<div class="col-md-12 first-content">
 					<div id="firstimg" style="display:none" align="center" class="col-md-6">
 						<img src="../assets/uploads/img_menu/<?php echo $row->image;?>" width="90%">
 				
 					</div>
 					<div style="margin-top:5%;" class="col-md-6">
-						<div style="margin-left:5%;">
+						<div style="">
 						<h3 class="post-title"><?php echo $row->title; ?></a></h3>
 						<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
 						<a  style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a>
 						</div>
 					</div>
 					<div id="second" align="center" class="col-md-6">
-						<img src="../assets/uploads/img_menu/<?php echo $row->image;?>" width="90%">
+						<img src="../assets/uploads/img_menu/<?php echo $row->image;?>" width="100%">
 				
 					</div>
 				

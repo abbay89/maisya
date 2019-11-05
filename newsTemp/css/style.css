@@ -991,6 +991,10 @@ RESPONSIVE
 #newsContent{
      /*margin-top: 5%;*/
 }
+.first-content .col-md-6{
+     padding-left: 2%;
+     padding-right: 2%;
+}
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
