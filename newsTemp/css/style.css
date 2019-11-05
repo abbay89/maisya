@@ -986,6 +986,10 @@ RESPONSIVE
 }
 .blog-title{
      padding-top:80px;font-size:30px;font-weight:600;text-align: center; font-family: Garamond;
+     margin-bottom: 3.5%;
+}
+#newsContent{
+     /*margin-top: 5%;*/
 }
 /*=========================================================
 	RESPONSIVE
@@ -1015,4 +1019,17 @@ RESPONSIVE
      .post.post-row .post-body p {
          display:none;
     }
+}
+@media only screen and (max-width: 600px) {
+     #newsContent{
+          
+          padding-right:5% !important;
+          padding-left:5%  !important;
+          
+     }
+     ol, ul {
+         list-style: outside none none;
+         margin: 0;
+         padding-left: 5%;
+     }
 }

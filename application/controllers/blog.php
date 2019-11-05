@@ -32,7 +32,7 @@ class Blog extends CI_Controller {
     }
 	
 	
-	public function page($index){
+	public function page($index = 0){
 		$data['loadjs']				= 	$this->loadJS;
 		$data['loadCss']			= 	$this->loadCSS;
 		$data['title_page']			= 	"Maisya Jewellery Online Shop";
@@ -43,6 +43,14 @@ class Blog extends CI_Controller {
 		$data['img_page']			= 	base_url()."assets/img/logo.png";
 		$data['banner_top'] 	= $this->home_model->get_banner('top');
 		$data['banner_bottom'] 	= $this->home_model->get_banner('bottom');
+
+		$data['Rings']				=	$this->home_model->get_img('Rings');
+		$data['Earrings']			=	$this->home_model->get_img('Earrings');
+		$data['Gemstone']			=	$this->home_model->get_img('Gemstone');
+		$data['Jewellery']			=	$this->home_model->get_img('Jewellery');
+		$data['Bracelets']			=	$this->home_model->get_img('Bracelets');
+		$data['sale']				=	$this->home_model->get_img('sale');
+		$data['Engangement']		=	$this->home_model->get_img('Engangement');
 		$footer 				= $this->db->query("select * from company_profile")->result();
 		$data['footer']			= $footer;
 		
