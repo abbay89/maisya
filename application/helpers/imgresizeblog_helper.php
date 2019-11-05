@@ -6,6 +6,8 @@ if ( ! function_exists('imgresizeblog'))
     	$ci =& get_instance();
     	$ci->load->model('news_model');
 
+    	$ci->load->library('image_lib');
+
 		$width = 240;
 		$height = 240;
 
@@ -26,18 +28,27 @@ if ( ! function_exists('imgresizeblog'))
 		$config['image_library'] = 'gd2';
 		$config['source_image'] = $src_img;
 		$config['new_image'] = $new_img;
+
+		$imageSize = $ci->image_lib->get_image_properties($config['source_image'], TRUE);
+        // $newSize = min($imageSize);
+        $newSize = 300;
+
+        $config['width'] = $newSize;
+        $config['height'] = $newSize;
+        $config['y_axis'] = ($imageSize['height'] - $newSize) / 2;
+        $config['x_axis'] = ($imageSize['width'] - $newSize) / 2;
 		// $config['create_thumb'] = TRUE;
 
 		// $config['dynamic_output'] = TRUE;
-		// $config['maintain_ratio'] = TRUE;
-		$config['width']         = 240;
-		$config['height']       = 240;
+		$config['maintain_ratio'] = FALSE;
+		// $config['width']         = 500;
+		// $config['height']       = 500;
 
 		if(!file_exists($new_img)){
 
-			$ci->load->library('image_lib', $config);
+			$ci->image_lib->initialize($config);
 
-			if ( ! $ci->image_lib->resize()) {
+			if ( ! $ci->image_lib->crop()) {
 		        echo $ci->image_lib->display_errors();
 		    }
 
