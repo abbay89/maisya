@@ -37,7 +37,7 @@
 									
                             </div>
                             <div class="col-xs-4 col-md-4 col-sm-4" align="right">
-                            <ul class="nav navbar-nav navbar-right">
+                            			<ul class="nav navbar-nav navbar-right">
 											<li style="margin-right:20px;margin-top:10px">
 											
 												<form id="postSearch" method="post" action="<?php echo base_url()?>product/search/">	
@@ -45,7 +45,7 @@
 												</form>
 											</li>
 										</ul>
-                                </div>
+                            </div>
 							<div class="col-xs-5 col-md-5 col-sm-5   pull-right mtmenu">
 								<div class="col-xs-12 col-md-12 col-sm-12 right-logo">
 									
@@ -75,12 +75,12 @@
 									</div>
 									<div class="col-xs-4 col-md-4 col-sm-4 top-menu">
 										
-										<div class="col-xs-10 col-md-10 col-sm-10">
+										<div class="col-xs-12 col-md-12 col-sm-12">
 											<?php
 												//echo $this->session->userdata('cust_username');
 												if(!$this->session->userdata('cust_username')){
 											?>
-													&nbsp;<i class="fa fa-user faclear"></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static">Sign In / Register</a>
+													&nbsp;<i class="fa fa-user faclear"></i>&nbsp;&nbsp;&nbsp;&nbsp;<a id="btn-signin" href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static">Sign In / Register</a>
 											<?php
 												}else{
 											?>

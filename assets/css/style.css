@@ -255,6 +255,12 @@ div.pagination span.current {
 	padding-right:0px none;
 	width:80%;
 }
+.container-full{
+	width: 100%;
+}
+.container-full .img-responsive{
+	width: 100%;
+}
 .bannerbt{
 	background-color:#8c1c21;
 	color:#fff;
@@ -1361,6 +1367,9 @@ font-size: 24px;
 	font-size: 15px;
     line-height: 30px;
 	font-family:RalewayRegular;
+}
+.top-menu #btn-signin{
+	font-size: 14px;
 }
 .top-menu > .col-xs-10, .top-menu > .col-xs-8, .top-menu > .col-xs-9{
 	font-size: 12px;

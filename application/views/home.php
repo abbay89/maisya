@@ -41,7 +41,7 @@
 		<div class="col-xs-12 col-md-12 col-sm-12 welcome-home">
 			Welcome To Maisya Jewellery Online Shop
 		</div>	
-		<div class="container">				
+		<div class="container container-full">				
 			<div class="">
 				<div class="">
 					

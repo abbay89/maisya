@@ -563,6 +563,8 @@ RESPONSIVE
  .post .post-title {
      font-size: 18px;
      margin-bottom: 0px;
+     line-height: 1.42857;
+     margin-bottom: 15px;
 }
  .post-tags li {
      display:inline-block;
@@ -953,7 +955,7 @@ RESPONSIVE
      color: #FFF;
      opacity: 0.9;
 }
-.col-md-4{
+.content-news-all .col-md-4{
      padding-left: 15px;
      padding-right: 15px;
 }
@@ -1000,6 +1002,9 @@ RESPONSIVE
      padding-left: 2%;
      padding-right: 2%;
 }
+.first-content .post-title{
+     line-height: 1.42857;
+}
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
@@ -1044,5 +1049,14 @@ RESPONSIVE
      .col-md-4{
           padding-left: 0px;
           padding-right: 0px;
+     }
+     .first-content #second{
+          margin-top: 10px;
+     }
+     .first-content-separator{
+          float: none !important;
+     }
+     #newsContent img{
+          width: 90vw !important;
      }
 }

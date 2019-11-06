@@ -24,7 +24,7 @@
     	<div class="row slider" style="">
     		<div class="col-md-12 blog-title" style="">BLOG</div>
     	</div>
-		<div class="row" style="margin-left:7%;margin-right:7%">
+		<div class="row content-news-all" style="margin-left:7%;margin-right:7%">
 					<div class="col-md-12">
 						
 					</div>
@@ -54,7 +54,9 @@
 						<div style="">
 						<h3 class="post-title"><?php echo $row->title; ?></a></h3>
 						<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
-						<a  style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a>
+						<div style="text-align:right;">
+							<a   href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a>
+						</div>
 						</div>
 					</div>
 					<div id="second" align="center" class="col-md-6">
@@ -62,7 +64,7 @@
 				
 					</div>
 				
-					</div><div style="float:right;width:100%;border-top:0.5px #ccc solid;height:40px;margin-top:5%"><br></div>
+					</div><div class="first-content-separator" style="float:right;width:100%;border-top:0.5px #ccc solid;height:40px;margin-top:5%"><br></div>
 					<?php
 					
 					}else if($j>=2 && $j<=4){
