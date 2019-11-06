@@ -74,9 +74,9 @@
 		$('#newsContent h3').css('color','#000')
 		$('#newsContent h4').css('font-family','\'Nunito Sans\', sans-serif')
 		$('#newsContent h4').css('color','#000')
-		$('#newsContent ol').css('font-family','\'Nunito Sans\', sans-serif')
+		$('#newsContent ol').css('font-family','\'Nunito\', sans-serif')
 		$('#newsContent ol').css('color','#000')
-		$('#newsContent li').css('font-family','\'Nunito Sans\', sans-serif')
+		$('#newsContent li').css('font-family','\'Nunito\', sans-serif')
 		$('#newsContent li').css('color','#000')
 		$('#newsContent li').css('white-space','normal')
 		
@@ -84,7 +84,7 @@
 		$('#newsContent span').css('font-size','18px')
 		
 		$('#newsContent span').css('font-family','inherit')
-		$('#newsContent span').css('font-weight', 300);
+		// $('#newsContent span').css('font-weight', 300);
 		$('#newsContent span').css('font-style', 'normal');
 		$('#newsContent span').css('font-variant', 'normal');
 		$('#newsContent span').css('text-decoration', 'normal');
