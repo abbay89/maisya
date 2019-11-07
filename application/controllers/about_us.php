@@ -125,7 +125,7 @@ class About_us extends CI_Controller {
 	public function store_location(){
 		$data['loadjs']				= 	$this->loadJS;
 		$data['loadCss']			= 	$this->loadCSS;
-		$data['title_page']			= 	"Maisya Jewellery Online Shop";
+		$data['title_page']			= 	"Maisya Jewellery Online Shop Store Location";
 		$data['description_page']	=   "Maisya Online Jewellery Portal in Indonesia";
 		$data['keyword_page']		=   "maisya,jewellery,maisya jewellery,indonesia,rudy";
 		$data['ogtitle_page']		= 	"Maisya Jewellery Online Shop";

@@ -52,7 +52,7 @@ class Checkout extends CI_Controller {
 		
 		$data['allstore']			= $this->db->query("select * from location where take_away = 1")->result_array();
 		
-		$data['title_page']			= 	"Maisya Jewellery Online Shop";
+		$data['title_page']			= 	"Maisya Jewellery Online Shop Checkout";
 		$data['description_page']	=   "Maisya Online Jewellery Portal in Indonesia";
 		$data['keyword_page']		=   "maisya,jewellery,maisya jewellery,indonesia,rudy";
 		$data['ogtitle_page']		= 	"Maisya Jewellery Online Shop";

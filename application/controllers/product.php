@@ -824,6 +824,13 @@ class Product extends CI_Controller {
 		
 		$data['pagingny'] = $this->createPaging($cate,$type,$_GET['page'],$datajson->totalPages,$_POST);
 		
+		if($type == 'all'){
+			$currentURL = current_url();
+			$uriArr = explode('/all', $currentURL);
+			$canonicalUrl = $uriArr[0].'/all';
+			// echo $canonicalUrl;
+			$data['canonical'] = $canonicalUrl;
+		}
 		
 		//echo  $this->createPaging($cate,$type,$page);exit;
 		if($type != 'cincin-nikah'){
@@ -832,6 +839,9 @@ class Product extends CI_Controller {
 			$this->load->view('list_product_wedding', $data);
 		}
     }
+
+
+
 	public function ajax_category($cate,$type,$page=1,$param='',$sortby='ProductID') {
 		
 		
@@ -947,12 +957,52 @@ class Product extends CI_Controller {
 			//echo 'descnya '.$desc;exit;
 			$datajson	= json_decode($this->getDataFromServer('/api/products/24/'.$page.'/'.$sortBy.'?'.$desc.'tag='.$tag.'&subtag='.$subtag.'&minPrice='.$fminprice.'&maxPrice='.$fmaxPrice.'&metalType='.$metal.'&gender='.$gender.'&shape='.$shape.'&stoneType='.$stoneshape));
 		}
+		
+		switch($type){
+			case "berlian-fancy":
+				$type = "fancy_colored_diamond";
+			break;
+			case "berlian":
+				$type = "diamond";
+			break;
+			case "emas":
+				$type = "gold";
+			break;
+			case "mutiara":
+				$type = "pearl";
+			break;
+			case "perak":
+				$type = "silver";
+			break;
+			case "kalung-fancy":
+				$type = "colorstonejew";
+			break;
+			case "kalung-berlian":
+				$type = "diamond_jewellery";
+			break;
+			case "kalung-mutiara":
+				$type = "pearljew";
+			break;
+			case "kalung-nikah":
+				$type = "all";
+			break;
+			
+			
+			
+		}
+		
+		if($cate == 'empty'){
+			$cate='';
+		}
+		
+		if($type == 'empty'){
+			$type= '';
+		}
+		
 		//echo '/api/products/24/'.$page.'/'.$sortBy.'?'.$desc.'tag='.$cate.'&searchText='.urlencode($_GET['keyword']).'&subtag='.$type.'&minPrice='.$fminprice.'&maxPrice='.$fmaxPrice.'&metalType='.$metal.'&gender='.$gender.'&shape='.$shape.'&stoneType='.$stoneshape;exit;
 	    
 		$datajson	= json_decode($this->getDataFromServer('/api/products/24/'.$page.'/'.$sortBy.'?'.$desc.'tag='.$cate.'&searchText='.urlencode($_GET['keyword']).'&subtag='.$type.'&minPrice='.$fminprice.'&maxPrice='.$fmaxPrice.'&metalType='.$metal.'&gender='.$gender.'&shape='.$shape.'&stoneType='.$stoneshape));
-		
-		
-		
+	
 		$customers	= $datajson->ProductList;		
 
 		foreach($customers as $listProduct)
@@ -995,11 +1045,12 @@ class Product extends CI_Controller {
 			echo $html;
 		exit;
     }
-	public function detail($category,$id) {
+	public function detail($category = '' ,$id = 0) {
 		
-		//echo $category;
-		
-		//print_r($category);exit
+		// echo $this->uri->segment(2);echo "<br>";
+		// echo $category;echo "<br>";
+		// echo $id;
+		// echo "<br>";exit;
 		
 		//print_r();
 		
@@ -1014,7 +1065,9 @@ class Product extends CI_Controller {
 		if(empty($data['detail_product'])){
 			redirect("home");
 		}
-		
+		// echo "<pre>";
+		// print_r($data['detail_product']);
+		// exit;
 		
 		$data['stoneinformation']		= $data['detail_product']->StoneInformations;
 		
@@ -1058,6 +1111,11 @@ class Product extends CI_Controller {
 		$data['img_page']			= 	"https://www.maisya.id:5060/api/ProductImages?kodeitem=".$data['detail_product']->ProductID."&width=200px&height=200px";
 		//$data['titlepage'] 			= 	$title;
 		//print_r($data['detail_product']);exit;
+
+		if( strtolower($this->uri->segment(2)) == 'all'){
+			$data['title_page'] = 'All '.$data['title_page'];
+		}
+
 		$data['img_box']			= $this->uri->segment(2);
 		$cat = explode('_',$dataid[0]);
 		$data['category'] = $cat[0];
@@ -1189,6 +1247,73 @@ class Product extends CI_Controller {
 		$result = curl_exec($curl);
 		return $result;
 	}
+	
+	public function addcartwedding(){
+		
+		if(isset($_POST['productPria'])){
+		$detail	= json_decode($this->getDetailProduct('/api/products/'.$_POST['productPria']));
+		/*edit by rudy 20180814*/
+		$cekCart = $this->db->query("select * from shopping_cart where id = '".$_POST['productPria']."' and user_id = '".$this->session->userdata('cust_username')."'")->row();
+		if(empty($cekCart)){
+			$data = array(
+			'id'      => $detail->ProductID,
+			'qty'     => 1,
+			'price'   => $detail->UnitPrice,
+			'name'    => $detail->ProductName,
+			'weight_item'    => $detail->WeightGold,
+			'user_id' => $this->session->userdata('cust_username'),
+			'size_ring'    => $_POST['ukuranPria'],
+			'size_price'    => $_POST['priceUkuranPria'],
+			'grafier'    => $_POST['grafierPria']
+			//'options' => array('Size' => 'L', 'Color' => 'Red')
+			);
+			if($this->session->userdata('cust_username'))
+			{
+				$this->db->insert('shopping_cart', $data);
+			}
+		}
+		else{
+			$qtyData	= $this->db->query(
+			" Update shopping_cart set qty = qty + 1 where  user_id = '".$this->session->userdata('cust_username')."' and id = '".$detail->ProductID."'");		
+		}
+		
+		}
+		
+		if(isset($_POST['productWanita'])){
+		$detail	= json_decode($this->getDetailProduct('/api/products/'.$_POST['productWanita']));
+		/*edit by rudy 20180814*/
+		$cekCart = $this->db->query("select * from shopping_cart where id = '".$detail->ProductID."' and user_id = '".$this->session->userdata('cust_username')."'")->row();
+		if(empty($cekCart)){
+			$data = array(
+			'id'      => $detail->ProductID,
+			'qty'     => 1,
+			'price'   => $detail->UnitPrice,
+			'name'    => $detail->ProductName,
+			'weight_item'    => $detail->WeightGold,
+			'user_id' => $this->session->userdata('cust_username'),
+			'size_ring'    => $_POST['ukuranWanita'],
+			'size_price'    => $_POST['priceUkuranWanita'],
+			'grafier'    => $_POST['grafierWanita']
+			//'options' => array('Size' => 'L', 'Color' => 'Red')
+			);
+			if($this->session->userdata('cust_username'))
+			{
+				$this->db->insert('shopping_cart', $data);
+			}
+		}
+		else{
+			$qtyData	= $this->db->query(
+			" Update shopping_cart set qty = qty + 1 where  user_id = '".$this->session->userdata('cust_username')."' and id = '".$detail->ProductID."'");		
+		}
+		
+		}
+		//$this->cart->insert($data);
+		//redirect("checkout");
+		echo '{"message":"success"}';exit;
+		
+	}
+	
+	
 	public function addcart($id){
 		$detail	= json_decode($this->getDetailProduct('/api/products/'.$id));;
 		/*edit by rudy 20180814*/

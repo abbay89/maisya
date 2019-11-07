@@ -70,6 +70,11 @@ class Staticpage extends CI_Controller {
 		$data['Bracelets']			=	$this->home_model->get_img('Bracelets');
 		$data['sale']				=	$this->home_model->get_img('sale');
 		$data['Engangement']		=	$this->home_model->get_img('Engangement');
+
+		
+		// echo $canonicalUrl;
+		$data['canonical'] = base_url().'contact-us';
+
         $this->load->view('static_page/all_content',$data);
 		
     }

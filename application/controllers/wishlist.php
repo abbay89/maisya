@@ -38,7 +38,7 @@ class Wishlist extends CI_Controller {
     public function index() {
 		$data['loadjs']				= 	$this->loadJS;
 		$data['loadCss']			= 	$this->loadCSS;
-		$data['title_page']			= 	"Maisya Jewellery Online Shop";
+		$data['title_page']			= 	"Maisya Jewellery Online Shop Wishlist";
 		$data['description_page']	=   "Maisya Online Jewellery Portal in Indonesia";
 		$data['keyword_page']		=   "maisya,jewellery,maisya jewellery,indonesia,rudy";
 		$data['ogtitle_page']		= 	"Maisya Jewellery Online Shop";

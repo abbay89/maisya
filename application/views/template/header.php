@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?php echo $datameta->title?>::<?php echo $title_page ?></title>
-    <meta name="description" content="<?php echo $datameta->description?>" />
+    <meta name="description" content="<?php echo $datameta->description.' '.$title_page?>" />
     <meta name="Keywords" content="<?php echo $datameta->keyword?>" />
 	<meta http-equiv='content-language' content='en' />
     <link rel="image_src" href="<?php echo $img_page?>" />
@@ -25,6 +25,10 @@
     <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta name=HandheldFriendly content=true />
 	<meta name=apple-mobile-web-app-capable content=YES />	
+	<?php if(isset($canonical)): ?>
+	<link href="<?php echo $canonical;?>" rel="canonical" />
+	<?php endif;?>
+
 	<link rel="icon" href="<?php echo base_url()?>assets/img/logo.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/bootstrap.min.css">
