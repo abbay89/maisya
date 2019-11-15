@@ -1493,7 +1493,21 @@ font-size: 24px;
     color: #fff;
 }
 
-
+/*More Testimonial*/
+a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+a.morelink {
+	color: #0254EB
+}
+a.morelink:visited {
+	color: #0254EB
+}
+/*End More Testimonial*/
 
 
 

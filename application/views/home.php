@@ -196,8 +196,8 @@
 											}
 										?>
 										
-										<div class="caption">
-											<?php echo substr($testimonial1->testi_desc,0,150)?> ....
+										<div class="caption comment more">
+											<?php echo $testimonial1->testi_desc;?>
 										</div>
 									</a>
 								</div>
@@ -219,8 +219,8 @@
 										<?php	
 											}
 										?> 
-										<div class="caption">
-											<?php echo substr($testimonial2->testi_desc,0,150)?> ....
+										<div class="caption comment more">
+											<?php echo $testimonial2->testi_desc;?>
 										</div>
 									</a>
 								</div>
@@ -242,8 +242,8 @@
 										<?php	
 											}
 										?>
-										<div class="caption">
-											<?php echo substr($testimonial3->testi_desc,0,150)?> ....
+										<div class="caption comment more">
+											<?php echo $testimonial3->testi_desc;?>
 										</div>
 									</a>
 								</div>
@@ -288,6 +288,43 @@
 					  slidesToScroll: 1,
 					});
 				}
+			});
+
+			$(document).ready(function() {
+				var showChar = 150;
+				var ellipsestext = "...";
+				var moretext = "more";
+				var lesstext = "less";
+				$('.more').each(function() {
+					cont_html  = $(this).children('p').html();
+					$(this).html('');
+					$(this).html(cont_html);
+					var content = $(this).html();
+
+					if(content.length > showChar) {
+
+						var c = content.substr(0, showChar);
+						var h = content.substr(showChar-1, content.length - showChar);
+
+						var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+						$(this).html(html);
+					}
+
+				});
+
+				$(".morelink").click(function(){
+					if($(this).hasClass("less")) {
+						$(this).removeClass("less");
+						$(this).html(moretext);
+					} else {
+						$(this).addClass("less");
+						$(this).html(lesstext);
+					}
+					$(this).parent().prev().toggle();
+					$(this).prev().toggle();
+					return false;
+				});
 			});
 			
 			

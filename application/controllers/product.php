@@ -777,6 +777,7 @@ class Product extends CI_Controller {
 		$data['description_page']	=   $tag." ".$type ." Collection Maisya Jewellery Online Shop";
 		$data['keyword_page']		=   str_replace(" ",",",$tag2).str_replace(" ",",",$tag).",maisya,jewellery,maisya jewellery,indonesia";
 		$data['ogtitle_page']		= 	$tag ." Collection Maisya Jewellery Online Shop";
+		$data['ogtitle_page']		= 	$data['title_page'];
 		//$data['ogtimg_page']		= 	"https://www.maisya.id//assets/uploads/img_menu/30562-ringweb.jpg";
 		//$data['img_page']			= 	"https://www.maisya.id//assets/uploads/img_menu/30562-ringweb.jpg";
 		
@@ -1141,7 +1142,15 @@ class Product extends CI_Controller {
 		$data['dataPria']	= json_decode($this->getDetailProduct('/api/products/'.$data['pria'][0]->KodeItem));
 		$data['dataWanita']	= json_decode($this->getDetailProduct('/api/products/'.$data['wanita'][0]->KodeItem));
 		
-		
+		$data['detail_product']	= $data['dataWanita'];
+
+		$data['title_page']			= 	$data['product']->Nama ." Collection Maisya Jewellery Online Shop";
+		$data['description_page']	=   $data['product']->Nama ." Collection Maisya Jewellery Online Shop";
+		$data['keyword_page']		=   str_replace(" ",",",$data['product']->Nama).",maisya,jewellery,maisya jewellery,indonesia,rudy,diamond";
+		$data['ogtitle_page']		= 	$data['title_page'];
+		$data['ogdesc_page']		= 	"Collection Maisya Jewellery Online Shop";
+		$data['ogtimg_page']		= 	"https://www.maisya.id:5060/api/ProductImages?kodeitem=".$data['detail_product']->ProductID."&width=200px&height=200px";
+		$data['img_page']			= 	"https://www.maisya.id:5060/api/ProductImages?kodeitem=".$data['detail_product']->ProductID."&width=200px&height=200px";
 		
 		$this->load->view('detail_product_wedding', $data);
 		
