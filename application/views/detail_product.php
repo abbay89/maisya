@@ -22,7 +22,7 @@
 						<input type="hidden" id="kodeitem" value="<?php echo $detail_product->ProductID?>" />
 						<div class="col-xs-12 col-md-6 col-sm-6 center">
 							<div id="img-detail">
-								<img id="zoom_03f" src="https://www.maisya.id:5060/api/<?php echo $url ?>?kodeitem=<?php echo $detail_product->ProductID?>&width=500&height=500" data-zoom-image="https://www.maisya.id:5060/api/<?php echo $url ?>?kodeitem=<?php echo $detail_product->ProductID?>&width=1000&height=1000" class="img-responsive ">
+								<img id="zoom_03f" src="https://www.maisya.id:5060/api/<?php echo $url ?>?kodeitem=<?php echo $detail_product->ProductID?>&width=500&height=500" data-zoom-image="https://www.maisya.id:5060/api/<?php echo $url ?>?kodeitem=<?php echo $detail_product->ProductID?>&width=1000&height=1000" class="img-responsive " alt="<?php echo $detail_product->ProductName;?>">
 								<div id="gallery_01f" style="width=500px;float:left; ">
 									<?php
 										$i = 1;
@@ -31,7 +31,7 @@
 										
 										<a  href="#" class="elevatezoom-gallery active" data-update="" data-image="https://www.maisya.id:5060/api/imageById?id=<?php echo $ls_coll->Id?>&width=500&height=500" 
 										data-zoom-image="https://www.maisya.id:5060/api/imageById?id=<?php echo $ls_coll->Id?>&width=1000&height=1000">
-											<img src="https://www.maisya.id:5060/api/imageById?id=<?php echo $ls_coll->Id?>&width=100&height=100" />
+											<img src="https://www.maisya.id:5060/api/imageById?id=<?php echo $ls_coll->Id?>&width=100&height=100" alt="<?php echo $detail_product->ProductName.' '.$i;?>"/>
 										</a>	
 										
 									 
@@ -267,7 +267,7 @@
 									Shipping Detail
 								</h2>
 								<div class="col-xs-12 col-md-5 col-sm-5">
-									<img class="img-responsive" src="<?php echo base_url()?>assets/uploads/box/<?php echo $img_box; ?>.jpg" />
+									<img class="img-responsive" src="<?php echo base_url()?>assets/uploads/box/<?php echo $img_box; ?>.jpg" alt="Box <?php $img_box;?>"/>
 								</div>
 								<div class="col-xs-12 col-md-7 col-sm-7 box-desc">
 									<p>

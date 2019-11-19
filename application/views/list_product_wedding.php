@@ -272,7 +272,7 @@
 										</div>
 										<a class="liprod" href="<?php echo base_url()."detailwedding/wedding-ring-".$listProduct->Id; ?>">
 										
-											<img src="<?php echo $image?>" alt="resized image" class=" img-responsive img-thumbnail image" />
+											<img src="<?php echo $image?>" alt="<?php echo $listProduct->Nama?>" class=" img-responsive img-thumbnail image" />
 											<?php
 												$src = $image;
 
@@ -280,7 +280,7 @@
 												{
 											?>
 												<div class="overlay">
-													<img src="<?php echo $image?>" class="img-responsive img-thumbnail image">
+													<img src="<?php echo $image?>" class="img-responsive img-thumbnail image" alt="<?php echo $listProduct->Nama?>">
 												</div>
 											<?php
 												}

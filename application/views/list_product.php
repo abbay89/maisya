@@ -238,7 +238,7 @@
 							if(count($detail_prod) == 0){ ?>
                             <div id="no_result" align="center" style="font-size:24px;margin-top:60px;color:#933;width:100%">NO RESULT FOUND !</div>
                             <?php } ?>
-							<div id="proLoader" align="center" style=" display:none;width:100%"><img style="margin-top:200px" src="<?php echo base_url()."assets/img/loader.svg";?>" /></div>						
+							<div id="proLoader" align="center" style=" display:none;width:100%"><img style="margin-top:200px" src="<?php echo base_url()."assets/img/loader.svg";?>" alt="loader" /></div>						
 								<?php
 							//		echo "<pre>";
 					//print_r($detail_prod);
@@ -276,7 +276,7 @@
 										</div>
 										<a class="liprod" href="<?php echo base_url()."detailproduct/".$category."/".str_replace(".","",str_replace(" ","-",$listProduct->ProductName)."--k--".$listProduct->ProductID); ?>">
 										
-											<img src='https://www.maisya.id:5060/api/ProductImages?kodeitem=<?php echo $listProduct->ProductID?>&width=200&height=200' alt="resized image" class=" img-responsive img-thumbnail image" />
+											<img src='https://www.maisya.id:5060/api/ProductImages?kodeitem=<?php echo $listProduct->ProductID?>&width=200&height=200' alt="<?php echo $listProduct->ProductName;?>" class=" img-responsive img-thumbnail image" />
 											<?php
 												$src = 'https://www.maisya.id:5060/api/ProductImages2?kodeitem='.$listProduct->ProductID.'&width=10&height=10';
 
@@ -284,7 +284,7 @@
 												{
 											?>
 												<div class="overlay">
-													<img src="https://www.maisya.id:5060/api/ProductImages2?kodeitem=<?php echo $listProduct->ProductID?>&width=210&height=200" class="img-responsive img-thumbnail image">
+													<img src="https://www.maisya.id:5060/api/ProductImages2?kodeitem=<?php echo $listProduct->ProductID?>&width=210&height=200" class="img-responsive img-thumbnail image" alt="<?php echo $listProduct->ProductName;?>">
 												</div>
 											<?php
 												}

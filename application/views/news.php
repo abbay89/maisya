@@ -10,7 +10,7 @@
 		<!-- <link type="text/css" rel="stylesheet" href="../newsTemp/css/bootstrap.min.css"/> -->
 
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="../newsTemp/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>newsTemp/css/font-awesome.min.css">
 		<!-- <div class="row" style="margin:2%">
 						<div class="col-xs-12 col-md-12 col-sm-12">
 							<div class="col-xs-3 col-md-3 col-sm-3">
@@ -20,7 +20,7 @@
                             </div>
                             </div> </div>  -->
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="../newsTemp/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>newsTemp/css/style.css"/>
     	<div class="row slider" style="">
     		<div class="col-md-12 blog-title" style="">BLOG</div>
     	</div>
@@ -47,7 +47,7 @@
 					?>
 					<div class="col-md-12 first-content">
 					<div id="firstimg" style="display:none" align="center" class="col-md-6">
-						<img src="../assets/uploads/img_menu/<?php echo $row->image;?>" width="90%">
+						<img src="<?php echo base_url() ?>assets/uploads/img_menu/<?php echo $row->image;?>" width="90%" alt="<?php echo $row->title; ?>">
 				
 					</div>
 					<div style="margin-top:5%;" class="col-md-6">
@@ -55,12 +55,12 @@
 						<h3 class="post-title"><?php echo $row->title; ?></a></h3>
 						<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
 						<div style="text-align:right;">
-							<a   href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a>
+							<a   href="<?php echo base_url() ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a>
 						</div>
 						</div>
 					</div>
 					<div id="second" align="center" class="col-md-6">
-						<img src="../assets/uploads/img_menu/<?php echo $row->image;?>" width="100%">
+						<img src="<?php echo base_url() ?>assets/uploads/img_menu/<?php echo $row->image;?>" width="100%" alt="<?php echo $row->title; ?>">
 				
 					</div>
 				
@@ -78,8 +78,8 @@
 					?>
 					<div class="col-md-4" >
 						<div class="post">
-						<a class="post-img" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
-						<div style="margin-top:20px;height:200px;width:100%;background:url(../assets/uploads/img_menu/<?php echo $row->image; ?>) no-repeat;background-position:center;background-size:100% auto"></div>
+						<a class="post-img" href="<?php echo base_url() ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
+						<div style="margin-top:20px;height:200px;width:100%;background:url(<?php echo base_url() ?>assets/uploads/img_menu/<?php echo $row->image; ?>) no-repeat;background-position:center;background-size:100% auto"></div>
 						</a>
 							<div class="post-body">
 								<div class="post-meta">
@@ -91,7 +91,7 @@
 								
 								<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo urlencode($title); ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 								<p style="font-size:18px;"> <?php echo substr($row->intro,0,100); ?>...</p>
-									<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
+									<a style="float:right" href="<?php echo base_url() ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 							</div>
 						</div>
 					</div>
@@ -107,9 +107,9 @@
 						<div style="margin-top:5%;" class="col-md-8">
 						
 							<div class="post">
-							<a class="post-img" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
+							<a class="post-img" href="<?php echo base_url() ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">
 							
-							<img src="../assets/uploads/img_menu/<?php echo $row->image; ?>" />
+							<img src="<?php echo base_url() ?>assets/uploads/img_menu/<?php echo $row->image; ?>" alt="<?php echo $row->title; ?>"/>
 							</a>
 								<div class="post-body">
 									<div class="post-meta">
@@ -123,7 +123,7 @@
 									
 									<h3 class="post-title"><a href="<?php echo base_url(); ?>blog/page/<?php echo urlencode($title); ?>/?id=<?php echo $row->news_id; ?>"> <?php echo $row->title ?></a></h3>
 									<p style="font-size:18px;"><?php echo $row->intro; ?>...</p>
-										<a style="float:right" href="/blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
+										<a style="float:right" href="<?php echo base_url() ?>blog/page/<?php echo $title; ?>/?id=<?php echo $row->news_id; ?>">Selanjutnya</a><br><br>
 										<div style="margin-top:10px;float:right;width:100%;border-bottom:0.5px #ccc solid;height:1px"></div>
 								</div>
 							

@@ -50,7 +50,7 @@
 								<!-- AddToAny END -->
 				            	
 				            	<br><br>
-                                <div  style="width:100%" align="center"><img width="100%" src="../../../assets/uploads/img_menu/<?php echo $row->image; ?>" /></div><br><br>
+                                <div  style="width:100%" align="center"><img width="100%" alt="<?php echo $row->title; ?>" src="<?php echo base_url();?>assets/uploads/img_menu/<?php echo $row->image; ?>" /></div><br><br>
 								<?php 
 								$cont = str_replace("height=","",$row->content);
 								$cont = str_replace("width=","",$cont);
