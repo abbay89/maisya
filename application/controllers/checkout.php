@@ -435,11 +435,11 @@ class Checkout extends CI_Controller {
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);  
-		// curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-		// 	"token: ".$this->session->userdata('token')
-		// ));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json',
-					'token: ' . $this->session->userdata('token'))); 
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			"token: ".$this->session->userdata('token')
+		));
+		// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json',
+		// 			'token: ' . $this->session->userdata('token'))); 
 		// echo "token: ".$this->session->userdata('token');
 		$result = curl_exec($curl);
 		//echo $this->config->item('maisya_server')."/api/AlamatKirim?customer_id=".$addressid;
