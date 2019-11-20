@@ -425,11 +425,13 @@ class Checkout extends CI_Controller {
 		//echo "select * from customer_address where cust_ad_id = '".$addressid."'";
 		//get address
 		//$receiver	= $this->db->query("select * from customer_address where id_server = '".$addressid."'")->row();
-		
-		$curl = curl_init($this->config->item('maisya_server')."/api/AlamatKirim/".$addressid);	
+		// echo $order_id.'<br>';
+		// echo $addressid;
+		$url = $this->config->item('maisya_server')."/api/AlamatKirim/".$addressid;	
 		
 		//echo $this->config->item('maisya_server')."/api/AlamatKirim?customer_id=".$addressid;
-		
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_FAILONERROR, true);
 		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
