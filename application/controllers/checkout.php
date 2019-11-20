@@ -330,32 +330,43 @@ class Checkout extends CI_Controller {
 		//getdata
 		$dataorder	= $this->db->query("select * from `order` where order_code = '".$_GET['order_id']."'")->row();
 		
-		$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
+		
 		
 		//tesssssss
 		//$this->sendSomaisya($_GET['order_id']);exit;
-		if($dataorder->kurir){
-			$jne_id	= $this->getJNEid($_GET['order_id'],$dataorder->order_address);
-			
-			if($jne_id)
-			{
-				if($this->db->query("update `order` set jne_id = '".$jne_id."' where order_code = '".$_GET['order_id']."'"))
+		if($dataorder->order_status == 0){
+			if($dataorder->kurir){
+				$jne_id	= $this->getJNEid($_GET['order_id'],$dataorder->order_address);
+				
+				if($jne_id)
 				{
-					$so_id = $this->sendSomaisya($_GET['order_id']);
+					if($this->db->query("update `order` set jne_id = '".$jne_id."' where order_code = '".$_GET['order_id']."'"))
+					{
+						$so_id = $this->sendSomaisya($_GET['order_id']);
+						
+						$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+					}
+
+					$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
 					
-					$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+					sleep(2);
+					redirect("invoice/detail/".$_GET['order_id']);
 				}
-				
-				
+				else
+				{
+					exit;
+				}
+			}else{
+				$so_id = $this->sendSomaisya($_GET['order_id']);					
+				$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+
+				$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
+
+				sleep(2);
 				redirect("invoice/detail/".$_GET['order_id']);
 			}
-			else
-			{
-				exit;
-			}
 		}else{
-			$so_id = $this->sendSomaisya($_GET['order_id']);					
-			$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+			redirect("invoice/detail/".$_GET['order_id']);
 		}
 		
 		
@@ -367,32 +378,44 @@ class Checkout extends CI_Controller {
 		//getdata
 		$dataorder	= $this->db->query("select * from `order` where order_code = '".$_GET['order_id']."'")->row();
 		
-		$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
+		
 		
 		//tesssssss
 		//$this->sendSomaisya($_GET['order_id']);exit;
-		if($dataorder->kurir){
-			$jne_id	= $this->getJNEid($_GET['order_id'],$dataorder->order_address);
-			
-			if($jne_id)
-			{
-				if($this->db->query("update `order` set jne_id = '".$jne_id."' where order_code = '".$_GET['order_id']."'"))
+		if($dataorder->order_status == 0){
+			if($dataorder->kurir){
+				$jne_id	= $this->getJNEid($_GET['order_id'],$dataorder->order_address);
+				
+				if($jne_id)
 				{
-					$so_id = $this->m_sendSomaisya($_GET['order_id'],$_GET['idmaisya'],$_GET['token']);
+					if($this->db->query("update `order` set jne_id = '".$jne_id."' where order_code = '".$_GET['order_id']."'"))
+					{
+						$so_id = $this->m_sendSomaisya($_GET['order_id'],$_GET['idmaisya'],$_GET['token']);
+						
+						$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+					}
+					$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
+
+					sleep(2);
 					
-					$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+					redirect("invoice/detail/".$_GET['order_id']);
 				}
-				
-				
+				else
+				{
+					exit;
+				}
+			}else{
+				$so_id = $this->m_sendSomaisya($_GET['order_id'],$_GET['idmaisya'],$_GET['token']);					
+				$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+
+				$this->db->query("Update `order` set order_status = 1 where order_code = '".$_GET['order_id']."'");
+
+				sleep(2);
+
 				redirect("invoice/detail/".$_GET['order_id']);
 			}
-			else
-			{
-				exit;
-			}
 		}else{
-			$so_id = $this->m_sendSomaisya($_GET['order_id'],$_GET['idmaisya'],$_GET['token']);					
-			$this->db->query("update `order` set so_id = '".$so_id."' where order_code = '".$_GET['order_id']."'");
+			redirect("invoice/detail/".$_GET['order_id']);
 		}
 		
 		
@@ -480,6 +503,10 @@ class Checkout extends CI_Controller {
 		$status	= json_decode($result);
 		
 		print_r($status);
+		if (curl_errno($ch)) {
+		    $error_msg = curl_error($ch);
+		    // print_r($error_msg);
+		}
 		
 		
 		return $status->detail[0]->cnote_no;
