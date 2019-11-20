@@ -435,15 +435,22 @@ class Checkout extends CI_Controller {
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);  
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			"token: ".$this->session->userdata('token')
-		));
-		//echo "token: ".$this->session->userdata('token');
+		// curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+		// 	"token: ".$this->session->userdata('token')
+		// ));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json',
+					'token: ' . $this->session->userdata('token'))); 
+		// echo "token: ".$this->session->userdata('token');
 		$result = curl_exec($curl);
 		//echo $this->config->item('maisya_server')."/api/AlamatKirim?customer_id=".$addressid;
 		
 		$address		= json_decode($result);
-		//print_r();
+		// print_r($address);
+		// echo "string";
+		if (curl_errno($curl)) {
+		    $error_msg = curl_error($curl);
+		    // print_r($error_msg);
+		}
 		
 		//getDstinationcode
 		$code_dest = $this->db->query("select * from destination_jne where kecamatan = '".$address->data->Kota_Kecamatan."'")->row();
@@ -488,7 +495,7 @@ class Checkout extends CI_Controller {
 		//$curl = curl_init();
 		$post_data="username=".$username."&api_key=".$api_key."&OLSHOP_BRANCH=".$OLSHOP_BRANCH."&OLSHOP_CUST=".$OLSHOP_CUST."&OLSHOP_ORDERID=".$OLSHOP_ORDERID."&OLSHOP_SHIPPER_NAME=".$OLSHOP_SHIPPER_NAME."&OLSHOP_SHIPPER_ADDR1=".$OLSHOP_SHIPPER_ADDR1."&OLSHOP_SHIPPER_ADDR2=".$OLSHOP_SHIPPER_ADDR2."&OLSHOP_SHIPPER_CITY=".$OLSHOP_SHIPPER_CITY."&OLSHOP_SHIPPER_ZIP=".$OLSHOP_SHIPPER_ZIP."&OLSHOP_SHIPPER_PHONE=".$OLSHOP_SHIPPER_PHONE."&OLSHOP_RECEIVER_NAME=".$OLSHOP_RECEIVER_NAME."&OLSHOP_RECEIVER_ADDR1=".$OLSHOP_RECEIVER_ADDR1."&OLSHOP_RECEIVER_ADDR2=".$OLSHOP_RECEIVER_ADDR2."&OLSHOP_RECEIVER_CITY=".$OLSHOP_RECEIVER_CITY."&OLSHOP_RECEIVER_ZIP=".$OLSHOP_RECEIVER_ZIP."&OLSHOP_RECEIVER_PHONE=".$OLSHOP_RECEIVER_PHONE."&OLSHOP_QTY=".$OLSHOP_QTY."&OLSHOP_WEIGHT=".$OLSHOP_WEIGHT."&OLSHOP_GOODSDESC=".$OLSHOP_GOODSDESC."&OLSHOP_GOODSVALUE=".$OLSHOP_GOODSVALUE."&OLSHOP_GOODSTYPE=".$OLSHOP_GOODSTYPE."&OLSHOP_INS_FLAG=".$OLSHOP_INS_FLAG."&OLSHOP_ORIG=".$OLSHOP_ORIG."&OLSHOP_DEST=".$OLSHOP_DEST."&OLSHOP_SERVICE=".$OLSHOP_SERVICE."&OLSHOP_COD_AMOUNT=".$OLSHOP_COD_AMOUNT;
 		//$url='https://apiv2.jne.co.id:10102/tracing/api/generatecnote';
-		$url='https://apiv2.jne.co.id:10101/tracing/api/generatecnote';
+		$url='http://apiv2.jne.co.id:10101/tracing/api/generatecnote';
 		
 		//echo $post_data;
 		//exit;
