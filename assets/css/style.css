@@ -5,7 +5,8 @@
 /****COMMON****/
 body {
   	color: #000;
-	font-family: RalewayRegular;
+	/*font-family: 'Nunito', sans-serif;*/
+	font-family: 'Nunito', sans-serif;
 	font-size: 13px;
 	line-height: 1.42857;
 	padding:0;
@@ -43,7 +44,7 @@ header{
 	z-index:1000;	
 	width:100%;
 	color: #000;
-    font-family: RalewayRegular;
+    font-family: 'Nunito', sans-serif;
     font-size: 13px;
     line-height: 1.42857;
     padding: 0;
@@ -587,7 +588,7 @@ PRoduct
     height:30px;
 }
 .head-acc{
-	font-family: RalewayRegular;
+	font-family: 'Nunito', sans-serif;
 	background: #ccc none repeat scroll 0 0;
     color: #000;
     float: left;
@@ -599,7 +600,7 @@ PRoduct
 	padding-left: 10px; 
 }
 .head-left{
-	font-family: RalewayRegular;
+	font-family: 'Nunito', sans-serif;
 	background: #ccc none repeat scroll 0 0;
     color: #000;
     float: left;
@@ -994,6 +995,12 @@ FORM REGISTRASI
 	color:#8c1c21;
 	font-weight:bold;
 }
+@media all and (max-width: 768px){
+	.welcome-home{
+		font-size: 14pt;
+	}
+}
+
 .carousel-showmanymoveone
 {
   .carousel-control
@@ -1366,7 +1373,7 @@ font-size: 24px;
 .top-menu{
 	font-size: 15px;
     line-height: 30px;
-	font-family:RalewayRegular;
+	font-family:'Nunito', sans-serif;
 }
 .top-menu #btn-signin{
 	font-size: 14px;

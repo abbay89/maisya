@@ -50,7 +50,7 @@
 							<?php foreach ($all_promo as $lst_promo){ 
 									if($lst_promo->wh_type == 'Small'){
 							?>
-										<div class="col-xs-6 col-md-6 col-sm-6">
+										<div class="col-xs-12 col-md-6 col-sm-12">
 											<a href="<?php echo $lst_promo->wh_url ?>">
 											<img  src="<?php echo base_url()?>assets/uploads/promo/<?php echo $lst_promo->wh_image_thumb_url?>" class="img-responsive"  alt="<?php echo $lst_promo->wh_image_thumb_url?>" title="<?php echo $lst_promo->wh_image_thumb_url?>">
 											</a>
