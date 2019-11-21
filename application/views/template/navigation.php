@@ -324,23 +324,25 @@
 													 <ul>
 														<li class="dropdown-header">By Collection</li>
 														<li class="divider"></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all">Koleksi Kalung</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-fancy">Kalung Permata Fancy</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-berlian">Kalung Berlian</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-mutiara">Kalung Mutiara</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-batu-mulia">Kalung Batu Permata</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-solitaire">Kalung Solitaire</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-nikah">Kalung Pernikahan</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/all">Koleksi Kalung</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-emas">Kalung Emas</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-berlian">Kalung Berlian</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-batu-mulia">Kalung Batu Permata</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-fancy">Kalung Berlian Fancy</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-mutiara">Kalung Mutiara</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-perak">Kalung Perak</a></li>
+														<!-- <li><a href="<?php echo base_url() ?>category/kalung/type/kalung-solitaire">Kalung Solitaire</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-nikah">Kalung Pernikahan</a></li> -->
 													 </ul>
 												  </li>
 												  <li class="col-sm-3 price-mn">
 													 <ul>
 														<li class="dropdown-header">By Price</li>
 														<li class="divider"></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all/page/1/100.000-5.000.000">IDR 100.000 - 5.000.000</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all/page/1/5.000.000-10.000.000">IDR 5.000.000 - 10.000.000</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all/page/10.000.000-50.000.000">IDR 10.000.000 - 50.000.000</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all/page/50.000.000">IDR 50.000.000+</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/all/page/1/100.000-5.000.000">IDR 100.000 - 5.000.000</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/all/page/1/5.000.000-10.000.000">IDR 5.000.000 - 10.000.000</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/all/page/10.000.000-50.000.000">IDR 10.000.000 - 50.000.000</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/all/page/50.000.000">IDR 50.000.000+</a></li>
 													 </ul>
 												  </li>
 												  <li class="col-sm-6 hidden-sm" style="padding-right:1%;">
@@ -587,13 +589,15 @@
 													<li class="col-sm-3">
 														<ul>
 															
-															<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/all">Koleksi Kalung</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-fancy">Kalung Permata Fancy</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-berlian">Kalung Berlian</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-mutiara">Kalung Mutiara</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-batu-mulia">Kalung Batu Permata</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-solitaire">Kalung Solitaire</a></li>
-														<li><a href="<?php echo base_url() ?>category/perhiasan-emas/type/kalung-nikah">Kalung Pernikahan</a></li>
+															<li><a href="<?php echo base_url() ?>category/kalung/type/all">Koleksi Kalung</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-emas">Kalung Emas</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-berlian">Kalung Berlian</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-batu-mulia">Kalung Batu Permata</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-fancy">Kalung Berlian Fancy</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-mutiara">Kalung Mutiara</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-perak">Kalung Perak</a></li>
+														<!-- <li><a href="<?php echo base_url() ?>category/kalung/type/kalung-solitaire">Kalung Solitaire</a></li>
+														<li><a href="<?php echo base_url() ?>category/kalung/type/kalung-nikah">Kalung Pernikahan</a></li> -->
 														 </ul>
 													</li>
 												</ul>

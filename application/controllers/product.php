@@ -577,6 +577,11 @@ class Product extends CI_Controller {
 			$tag 	= 'jewellery';	
 			$title	= '<li >Jewellery </li><li class="active">All Jewellery</li>';
 		}
+		else if($cate == 'kalung')
+		{
+			$tag 	= 'necklace';	
+			$title	= '<li >Necklace </li><li class="active">All Necklace</li>';
+		}
 		
 		if($type == 'all')
 		{
@@ -616,6 +621,9 @@ class Product extends CI_Controller {
 					break;
 					case 'perhiasan-emas' :
 						$subtag 	= 'jewellery';
+					break;
+					case 'kalung' :
+						$subtag 	= 'necklace';
 					break;
 					default:
 						$subtag = $type;
@@ -673,13 +681,22 @@ class Product extends CI_Controller {
 				$subtag = "silver";
 			break;
 			case "kalung-fancy":
-				$subtag = "colorstonejew";
+				$subtag = "color_diamond";
 			break;
 			case "kalung-berlian":
-				$subtag = "diamond_jewellery";
+				$subtag = "diamond";
 			break;
 			case "kalung-mutiara":
-				$subtag = "pearljew";
+				$subtag = "pearl";
+			break;
+			case "kalung-batu-mulia":
+				$subtag = "gemstone";
+			break;
+			case "kalung-perak":
+				$subtag = "silver";
+			break;
+			case "kalung-emas":
+				$subtag = "gold";
 			break;
 			case "kalung-nikah":
 				$subtag = "all";
@@ -704,6 +721,7 @@ class Product extends CI_Controller {
 			$pos	= strpos($unitprice, ";");
 			if ($pos === false) 
 			{
+				$unitprice = str_replace('.', '', $unitprice);
 				$price 		= explode("-",$unitprice);
 				$fminprice	= str_replace("k","000",str_replace("m","000000",$price[0]));
 				$fmaxPrice	= str_replace("k","000",str_replace("m","000000",$price[1]));
@@ -722,7 +740,7 @@ class Product extends CI_Controller {
 				}
 				//exit;
 			}
-			
+			// echo '&minPrice='.$fminprice.'&maxPrice='.$fmaxPrice;
 			//exit;
 			$datajson	= json_decode($this->getDataFromServer('/api/products/24/'.$page.'/Productid??tag='.$tag.'&subtag='.$subtag.'&minPrice='.$fminprice.'&maxPrice='.$fmaxPrice.'&metalType='.$metal.'&gender='.$gender.'&shape='.$shape.'&stoneType='.$stoneshape));
 			
