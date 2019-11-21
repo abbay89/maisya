@@ -315,7 +315,7 @@ class Home extends CI_Controller {
 			
 			//echo "gagal";
 			$this->session->unset_userdata('redirect');
-			redirect(base_url() . '/' . $redirect);
+			redirect(base_url() . $redirect);
 		}
 		else{
 			echo "<script> alert('".$send_toserver->message."');location.href = '".base_url()."';</script>";

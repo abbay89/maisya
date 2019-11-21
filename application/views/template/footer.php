@@ -314,7 +314,7 @@
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password (Alphanumeric with min 5 characters)">
 							</div>
                             <div class="form-group">
-								<input type="hidden" class="form-control" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+								<input type="hidden" class="form-control" name="redirect" value="<?php echo substr($_SERVER["REQUEST_URI"], 1); ?>">
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-signin col-xs-12 ">Sign In</button>
