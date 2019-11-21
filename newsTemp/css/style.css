@@ -961,7 +961,7 @@ RESPONSIVE
 }
 #footer{
      color: #000;
-    font-family: RalewayRegular;
+    font-family: 'Nunito', sans-serif;
     font-size: 13px;
     line-height: 1.42857;
     padding: 0;
@@ -980,7 +980,7 @@ RESPONSIVE
 }
 .btm-form{
          color: #000;
-    font-family: RalewayRegular;
+    font-family: 'Nunito', sans-serif;
     font-size: 13px;
     line-height: 40px;
     padding: 0;

@@ -7,9 +7,16 @@
     font-family: RalewayRegular;
     src: url('../fonts/Raleway-Regular.ttf');
 }
-@font-face {
+/*@font-face {
 	font-family: 'NunitoLight';
 	font-style: normal;
 	font-weight: normal;
 	src: url('../fonts/nunito/Nunito-Light.ttf');
+}*/
+/*@font-face {
+	font-family: 'NunitoRegular';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/nunito/Nunito-Regular.ttf');
 }
+*/

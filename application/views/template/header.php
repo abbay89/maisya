@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/bootstrap.min.css">
 	
 	<link href="<?php echo base_url() ?>/assets/jq_ui/jquery-ui.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
 	
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
