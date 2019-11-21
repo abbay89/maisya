@@ -290,8 +290,8 @@
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/cateye">Batu Cateye</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/berlian">Batu Berlian</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Baru Emerald</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Rubi</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Saphir</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Ruby</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Sapphire</a></li>
 													 </ul>
 												  </li>
 												  <li class="col-sm-3  price-mn">
@@ -573,8 +573,8 @@
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/cateye">Batu Cateye</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/berlian">Batu Berlian</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Baru Emerald</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Rubi</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Saphir</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Ruby</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Sapphire</a></li>
 														 </ul>
 													</li>
 												</ul>
