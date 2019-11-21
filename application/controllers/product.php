@@ -791,7 +791,7 @@ class Product extends CI_Controller {
 		
 		$data['cate'] 		= str_replace('-',' ',$cate." ".$sub);
 		
-		$data['title_page']			= 	(strtolower($tag)=='ring' ? 'Cincin':$tag)." ".ucfirst($type) ." Maisya";
+		$data['title_page']			= 	(strtolower($tag)=='ring' ? 'Cincin':ucfirst($tag))." ".ucfirst($type) ." Maisya";
 		$data['description_page']	=   $tag." ".$type ." Collection Maisya Jewellery Online Shop";
 		$data['keyword_page']		=   str_replace(" ",",",$tag2).str_replace(" ",",",$tag).",maisya,jewellery,maisya jewellery,indonesia";
 		$data['ogtitle_page']		= 	$tag ." Collection Maisya Jewellery Online Shop";
