@@ -289,7 +289,7 @@
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/alexandrite">Batu Alexandrite</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/cateye">Batu Cateye</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/berlian">Batu Berlian</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Baru Emerald</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Batu Emerald</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Ruby</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Sapphire</a></li>
 													 </ul>
@@ -572,7 +572,7 @@
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/alexandrite">Batu Alexandrite</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/cateye">Batu Cateye</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/berlian">Batu Berlian</a></li>
-														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Baru Emerald</a></li>
+														<li><a href="<?php echo base_url() ?>category/batu-permata/type/emerald">Batu Emerald</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/ruby">Batu Ruby</a></li>
 														<li><a href="<?php echo base_url() ?>category/batu-permata/type/sapphire">Batu Sapphire</a></li>
 														 </ul>
