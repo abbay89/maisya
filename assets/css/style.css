@@ -220,6 +220,7 @@ div.pagination a {
     margin: 4px;
     padding: 2px 5px;
     text-decoration: none;
+    display: inline-block;
 }
 div.pagination a:hover, div.pagination a:active {
 	border: 1px solid #000099;
