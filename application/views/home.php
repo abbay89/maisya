@@ -191,7 +191,7 @@
 										<?php
 											}else{
 										?>
-												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png" width="150"  height="150" class="img-circle" alt="maisya.id" title="maisya"/>
+												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png" width="150"  height="150" class="" alt="maisya.id" title="maisya"/>
 										<?php	
 											}
 										?>
@@ -215,7 +215,7 @@
 										<?php
 											}else{
 										?>
-												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png" width="150"   height="150" class="img-circle" alt="maisya.id" title="maisya"/>
+												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png" width="150"   height="150" class="" alt="maisya.id" title="maisya"/>
 										<?php	
 											}
 										?> 
@@ -238,7 +238,7 @@
 										<?php
 											}else{
 										?>
-												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png"  width="150"   height="150" class="img-circle" alt="maisya.id" title="maisya"/>
+												<img src="<?php echo base_url()?>assets/uploads/foto/logo.png"  width="150"   height="150" class="" alt="maisya.id" title="maisya"/>
 										<?php	
 											}
 										?>
