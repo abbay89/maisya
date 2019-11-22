@@ -54,7 +54,7 @@ header{
     letter-spacing: 0.5px;
 }
 header a{
-	font-weight: normal;
+	font-weight: 600;
 }
 li{
 	list-style:none;
